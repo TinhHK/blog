@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
+    public function checkLogin(String $userName, String $passWord)
+    {
+        $user = self::where('name', $userName)->first();
+        if($user) {
+            return Hash::check($passWord, $user->password);
+        }
+        return false;
+    }
 }
