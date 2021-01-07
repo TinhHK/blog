@@ -29,7 +29,7 @@ function loadCar() {
     $.ajax({
         type : "GET",
         url : "https://vpic.nhtsa.dot.gov/api/vehicles/getmodelsformakeyear/make/honda/modelyear/2015?format=json",
-        dataType : "json",
+        dataType : "html",
         error : function (jqXHR, textStatus, errorThrown) {
                 alert('Error : ' + jqXHR.responseText);
         },
