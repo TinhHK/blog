@@ -55,14 +55,46 @@
 
                     </div>
                 </div>
-
+            </div>
+        </div>
+    </div>
+    <div class="car-display d-none">
+        <div class="container">
+            <div class="row mt-5">
+                <div id="car-list" class=" col-md-10">
+                    <table class="table table-striped table-bordered table-hover" id="dataTables-car">
+                        <thead>
+                        <tr>
+                            <th>Make_ID</th>
+                            <th>Make_Name</th>
+                            <th>Model_ID</th>
+                            <th>Model_Name</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-2">
+                    <a class="btn btn-primary" href="/logout">Log out</a>
+                </div>
             </div>
         </div>
     </div>
 
 
-    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="{{ asset('js/login.js') }}"></script>
+    @if (session('login'))
+        <script>
+            $(function() {
+                loadCar();
+            });
+        </script>
+    @endif
+
 </body>
 </html>

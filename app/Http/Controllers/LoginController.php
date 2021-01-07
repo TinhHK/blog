@@ -31,10 +31,16 @@ class LoginController extends Controller
 
         $userName =  $request->input('user.name');
         $passWord =  $request->input('user.password');
-        $match = $this->user->checkLogin($userName, $passWord);
-        if($match) {
-            return redirect('/login')->with('status', 'Login successfully!');
+        $isMatch = $this->user->checkLogin($userName, $passWord);
+        if($isMatch) {
+            $request->session()->put('login', true);
+            return redirect()->route('getLogin')->with('status', 'Login successfully!');
         }
         return redirect()->back()->withErrors('Username or password is not matched');
+    }
+
+    public function logout(Request $request) {
+        $request->session()->flush();
+        return redirect()->route('getLogin');
     }
 }
