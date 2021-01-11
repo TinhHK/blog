@@ -62,18 +62,6 @@
         <div class="container">
             <div class="row mt-5">
                 <div id="car-list" class=" col-md-10">
-                    <table class="table table-striped table-bordered table-hover" id="dataTables-car">
-                        <thead>
-                        <tr>
-                            <th>Make_ID</th>
-                            <th>Make_Name</th>
-                            <th>Model_ID</th>
-                            <th>Model_Name</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
                 </div>
                 <div class="col-md-2">
                     <a class="btn btn-primary" href="/logout">Log out</a>
